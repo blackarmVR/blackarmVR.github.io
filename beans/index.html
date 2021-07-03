@@ -1,0 +1,152 @@
+<html>
+    <head>
+        <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+        <meta content="utf-8" http-equiv="encoding">
+        <title>beans</title>
+        <style>
+            #dark {
+                background-color: rgb(55, 57, 63);
+                border: solid 2px rgb(55, 57, 63);
+                border-radius: 10px;
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                width: 120px;
+                height: 200px;
+                padding:50px;
+            }
+            #light {
+                background-color: rgb(255, 255, 255);
+                border: solid 2px rgb(180, 180, 180);
+                border-radius: 10px;
+                position: absolute;
+                left: 240px;
+                top: 10px;
+                width: 120px;
+                height: 200px;
+                padding:50px;
+            }
+            #controls {
+                background-color: rgb(255, 255, 255);
+                border: solid 2px rgb(180, 180, 180);
+                border-radius: 10px;
+                position: absolute;
+                left: 10px;
+                top: 320px;
+                width: 290px;
+                height: 160px;
+                padding:80px;
+            }
+            p {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+            td {
+                font-size: 80%;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="dark">
+            <p id="darkSprouts">Sprouts</p>
+            <p id="darkMembers">Members</p>
+            <p id="darkBeans">Beans</p>
+            <p id="darkBots">Bots</p>
+        </div>
+        <div id="light">
+            <p id="lightSprouts">Sprouts</p>
+            <p id="lightMembers">Members</p>
+            <p id="lightBeans">Beans</p>
+            <p id="lightBots">Bots</p>
+        </div>
+        <div id="controls">
+            <table>
+                <tr>
+                    <td></td>
+                    <td>Red</td>
+                    <td>Green</td>
+                    <td>Blue</td>
+                </tr>
+                <tr>
+                    <td>Sprouts</td>
+                    <td><input type="number" id="sproutsRed" min="0" max="255" value="178"/></td>
+                    <td><input type="number" id="sproutsGreen" min="0" max="255" value="193"/></td>
+                    <td><input type="number" id="sproutsBlue" min="0" max="255" value="77"/></td>
+                </tr>
+                <tr>
+                    <td>Members</td>
+                    <td><input type="number" id="membersRed" min="0" max="255" value="110"/></td>
+                    <td><input type="number" id="membersGreen" min="0" max="255" value="193"/></td>
+                    <td><input type="number" id="membersBlue" min="0" max="255" value="77"/></td>
+                </tr>
+                <tr>
+                    <td>Beans</td>
+                    <td><input type="number" id="beansRed" min="0" max="255" value="76"/></td>
+                    <td><input type="number" id="beansGreen" min="0" max="255" value="170"/></td>
+                    <td><input type="number" id="beansBlue" min="0" max="255" value="127"/></td>
+                </tr>
+                <tr>
+                    <td>Bots</td>
+                    <td><input type="number" id="botsRed" min="0" max="255" value="139"/></td>
+                    <td><input type="number" id="botsGreen" min="0" max="255" value="95"/></td>
+                    <td><input type="number" id="botsBlue" min="0" max="255" value="51"/></td>
+                </tr>
+            </table>
+        </div>
+        <script>
+
+function addEvents(){
+    document.getElementById("sproutsRed").addEventListener("change", colorText, null);
+    document.getElementById("sproutsBlue").addEventListener("change", colorText, null);
+    document.getElementById("sproutsGreen").addEventListener("change", colorText, null);
+    document.getElementById("membersRed").addEventListener("change", colorText, null);
+    document.getElementById("membersGreen").addEventListener("change", colorText, null);
+    document.getElementById("membersBlue").addEventListener("change", colorText, null);
+    document.getElementById("beansRed").addEventListener("change", colorText, null);
+    document.getElementById("beansGreen").addEventListener("change", colorText, null);
+    document.getElementById("beansBlue").addEventListener("change", colorText, null);
+    document.getElementById("botsRed").addEventListener("change", colorText, null);
+    document.getElementById("botsGreen").addEventListener("change", colorText, null);
+    document.getElementById("botsBlue").addEventListener("change", colorText, null);
+}
+
+function colorText(){
+    var red;
+    var green;
+    var blue;
+    var rgb;
+    // sprouts
+    red = document.getElementById("sproutsRed").value;
+    green = document.getElementById("sproutsGreen").value;
+    blue = document.getElementById("sproutsBlue").value;
+    rgb = "rgb(" + red + ", " + green + ", " + blue + ")";
+    document.getElementById("darkSprouts").style.color = rgb;
+    document.getElementById("lightSprouts").style.color = rgb;
+    // members
+    red = document.getElementById("membersRed").value;
+    green = document.getElementById("membersGreen").value;
+    blue = document.getElementById("membersBlue").value;
+    rgb = "rgb(" + red + ", " + green + ", " + blue + ")";
+    document.getElementById("darkMembers").style.color = rgb;
+    document.getElementById("lightMembers").style.color = rgb;
+    // beans
+    red = document.getElementById("beansRed").value;
+    green = document.getElementById("beansGreen").value;
+    blue = document.getElementById("beansBlue").value;
+    rgb = "rgb(" + red + ", " + green + ", " + blue + ")";
+    document.getElementById("darkBeans").style.color = rgb;
+    document.getElementById("lightBeans").style.color = rgb;
+    // bots
+    red = document.getElementById("botsRed").value;
+    green = document.getElementById("botsGreen").value;
+    blue = document.getElementById("botsBlue").value;
+    rgb = "rgb(" + red + ", " + green + ", " + blue + ")";
+    document.getElementById("darkBots").style.color = rgb;
+    document.getElementById("lightBots").style.color = rgb;
+}
+
+addEvents();
+colorText();
+
+        </script>
+    </body>
+</html>
